@@ -1,0 +1,36 @@
+# .gitignore para proyectos de Visual Studio / .NET
+
+## Ignorar archivos de usuario específicos de Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Ignorar carpetas de compilación
+[Bb]in/
+[Oo]bj/
+
+## Ignorar archivos de configuración local que pueden contener secretos
+appsettings.Development.json
+secrets.json
+
+## Ignorar carpetas de herramientas y paquetes (NuGet restaura esto)
+/packages/
+/tools/
+
+## Ignorar archivos generados por herramientas de .NET
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+
+## Ignorar archivos de caché de Visual Studio Code
+.vscode/
+
+## Ignorar archivos del sistema operativo
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+## Ignorar archivos de caché de Rider
+.idea/
