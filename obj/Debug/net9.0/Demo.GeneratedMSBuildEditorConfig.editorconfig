@@ -32,8 +32,24 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/COSAS/VISUAL PERSONAL/EJEMPLOS AZ APP SER/ASP.NET/Demo/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/COSAS/VISUAL PERSONAL/EJEMPLOS AZ APP SER/ASP.NET/Demo/Views/Projects/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/COSAS/VISUAL PERSONAL/EJEMPLOS AZ APP SER/ASP.NET/Demo/Views/Projects/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/COSAS/VISUAL PERSONAL/EJEMPLOS AZ APP SER/ASP.NET/Demo/Views/Projects/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/COSAS/VISUAL PERSONAL/EJEMPLOS AZ APP SER/ASP.NET/Demo/Views/Projects/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/COSAS/VISUAL PERSONAL/EJEMPLOS AZ APP SER/ASP.NET/Demo/Views/Projects/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/COSAS/VISUAL PERSONAL/EJEMPLOS AZ APP SER/ASP.NET/Demo/Views/Shared/Error.cshtml]
