@@ -1,31 +1,158 @@
-html {
-  font-size: 14px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+:root {
+    --primary-color: #5b20a3; 
+    --primary-color-hover: #1d4ed8;
+    --light-bg: #f9fafb;
+    --border-color: #e5e7eb;
+    --card-bg: #ffffff;
+    --dark-text: #111827;
+    --light-text: #6b7280;
+    --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
+    --card-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 body {
-  margin-bottom: 60px;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.container-fluid {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+/* Barra superior */
+.top-nav {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
 }
+
+.nav-link {
+    color: var(--light-text);
+    border-bottom: 3px solid transparent;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    margin-top: -2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Estilos de pag y botones */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--dark-text);
+}
+
+.page-subtitle {
+    font-size: 1.125rem;
+    color: var(--light-text);
+    margin-top: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+}
+
+/* index */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease-in-out;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+.project-card-new {
+    border-style: dashed;
+    border-width: 2px;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.project-card-new:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* formularios crear/editar/etc */
+.form-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 1rem; /* 16px */
+    box-shadow: var(--card-shadow);
+}
+.form-section {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.form-section-header h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.form-section-header p {
+    color: var(--light-text);
+    font-size: 0.875rem;
+}
+
+.form-control, .form-select {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+
+.status-badge {
+    display: inline-block; padding: 0.25rem 0.75rem; font-size: 0.75rem;
+    font-weight: 600; border-radius: 50px;
+    text-transform: capitalize;
+}
+
+/* regla "logo" */
+.navbar-brand {
+    color: var(--primary-color);
+}
+
+.status-planificado { background-color: #e5e7eb; color: #374151; }
+.status-en-curso { background-color: #dbeafe; color: #1e40af; }
+.status-completado { background-color: #d1fae5; color: #065f46; }
+.status-en-espera { background-color: #fef3c7; color: #92400e; }
+.status-cancelado { background-color: #fee2e2; color: #991b1b; }

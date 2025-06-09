@@ -1,27 +1,23 @@
-// Models/Project.cs
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace PortalGestionInterna.Models
 {
     public class Project
     {
-        public int Id { get; set; } // Clave Primaria
+        public int Id { get; set; }
 
-        [Required(ErrorMessage = "El nombre del proyecto es obligatorio.")]
-        [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
+        [Required(ErrorMessage = "El nombre es obligatorio.")]
+        [StringLength(100)]
         [Display(Name = "Nombre del Proyecto")]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; }
 
-        [StringLength(500, ErrorMessage = "La descripción no puede exceder los 500 caracteres.")]
-        [DataType(DataType.MultilineText)]
+        [StringLength(500)]
         [Display(Name = "Descripción")]
-        public string? Description { get; set; } // Nullable si la descripción es opcional
+        public string? Description { get; set; }
 
         [Required(ErrorMessage = "El estado es obligatorio.")]
-        [StringLength(50)]
         [Display(Name = "Estado")]
-        public string Status { get; set; } = string.Empty; // Ej: Planificado, En Curso, Completado
+        public string Status { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Fecha de Inicio")]
@@ -32,13 +28,9 @@ namespace PortalGestionInterna.Models
         public DateTime? EndDate { get; set; }
 
         [Display(Name = "Fecha de Creación")]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; }
 
         [Display(Name = "Última Actualización")]
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-
-        // Podrías añadir relaciones aquí, por ejemplo, con un modelo de Empleado
-        // public string? AssignedToUserId { get; set; }
-        // public virtual ApplicationUser? AssignedToUser { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }

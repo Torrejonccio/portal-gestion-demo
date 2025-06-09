@@ -1,60 +1,46 @@
 @model PortalGestionInterna.Models.Project
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles del Proyecto";
 }
 
-<h1>Details</h1>
+<header class="page-header">
+    <div>
+        <h1 class="page-title">Detalles del Proyecto</h1>
+        <p class="page-subtitle">Información completa para "@Model.Name".</p>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar Proyecto</a>
+        <a asp-action="Index" class="btn btn-outline-secondary">Volver a la Lista</a>
+    </div>
+</header>
 
-<div>
-    <h4>Project</h4>
-    <hr />
+<div class="form-card">
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+        
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.Description)</dt>
+        <dd class = "col-sm-9">@Html.DisplayFor(model => model.Description)</dd>
+        
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.Status)</dt>
+        <dd class = "col-sm-9">
+             @{
+                var statusClass = "status-" + (Model.Status ?? "").ToLower().Replace(" ", "-");
+             }
+            <span class="status-badge @statusClass">@Model.Status</span>
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UpdatedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UpdatedAt)
-        </dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.StartDate)</dt>
+        <dd class = "col-sm-9">@Model.StartDate?.ToString("dd 'de' MMMM 'de' yyyy")</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.EndDate)</dt>
+        <dd class = "col-sm-9">@Model.EndDate?.ToString("dd 'de' MMMM 'de' yyyy")</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.CreatedAt)</dt>
+        <dd class = "col-sm-9">@Model.CreatedAt.ToLocalTime().ToString("g")</dd>
+
+        <dt class = "col-sm-3">@Html.DisplayNameFor(model => model.UpdatedAt)</dt>
+        <dd class = "col-sm-9">@Model.UpdatedAt.ToLocalTime().ToString("g")</dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>

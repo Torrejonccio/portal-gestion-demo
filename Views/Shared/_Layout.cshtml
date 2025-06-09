@@ -1,45 +1,55 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Demo</title>
-    <script type="importmap"></script>
+    <title>@ViewData["Title"] - PortalCorp</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Demo.styles.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="top-nav">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Projects" asp-action="Index">Portal de gestión</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <!-- A futuros cambios -->
-                    </ul>
+                <div class="d-flex justify-content-between align-items-center" style="height: 4.5rem;">
+                    <!-- Sección Izquierda: Logo y Enlaces -->
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <a asp-controller="Projects" asp-action="Index" class="navbar-brand fs-4 fw-bold text-decoration-none">PortalTorrejón</a>
+                        </div>
+                        <div class="d-none d-sm-block ms-4">
+                            <div class="d-flex space-x-4">
+                                <a asp-controller="Projects" asp-action="Index" class="nav-link px-3 py-2 text-sm fw-medium active">Proyectos</a>
+                                <span class="nav-link px-3 py-2 text-sm fw-medium opacity-50" style="cursor:not-allowed;">AÚN NADA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección Derecha: Crear y Avatar -->
+                    <div class="d-flex align-items-center">
+                        <a asp-controller="Projects" asp-action="Create" class="btn btn-primary btn-sm me-3">?????</a>
+                        <div class="flex-shrink-0">
+                            <img class="rounded-circle" style="height: 40px; width: 40px;" src="https://avatars.githubusercontent.com/u/102492101?v=4" alt="Avatar de usuario"
+                            onerror="this.onerror=null;this.src='https://placehold.co/40x40/666/fff?text=U';">
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    
+    <div class="py-5">
+        <main role="main" class="container-fluid">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Demo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

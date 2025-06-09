@@ -1,64 +1,85 @@
 @model PortalGestionInterna.Models.Project
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Proyecto";
 }
 
-<h1>Edit</h1>
-
-<h4>Project</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
-                <span asp-validation-for="StartDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
-                <span asp-validation-for="EndDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedAt" class="control-label"></label>
-                <input asp-for="UpdatedAt" class="form-control" />
-                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<header class="page-header">
+    <div>
+        <h1 class="page-title">Editar Proyecto</h1>
+        <p class="page-subtitle">Modificando la información para "@Model.Name".</p>
     </div>
-</div>
+</header>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="CreatedAt" />
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    <div class="form-card">
+        <!-- SECCIÓN 1: INFORMACIÓN GENERAL -->
+        <div class="row form-section">
+            <div class="col-md-4">
+                <div class="form-section-header">
+                    <h2>Información General</h2>
+                    <p>Datos básicos para identificar y clasificar el proyecto.</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3">
+                    <div class="col-sm-8">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label asp-for="Status" class="form-label"></label>
+                        <select asp-for="Status" class="form-select">
+                            <option>Planificado</option>
+                            <option>En Curso</option>
+                            <option>Completado</option>
+                            <option>En Espera</option>
+                            <option>Cancelado</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                    <div class="col-12">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: PLAZOS -->
+        <div class="row form-section">
+            <div class="col-md-4">
+                <div class="form-section-header">
+                    <h2>Plazos y Fechas</h2>
+                    <p>Fechas clave para el seguimiento del proyecto.</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label asp-for="StartDate" class="form-label"></label>
+                        <input asp-for="StartDate" class="form-control" type="date" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label asp-for="EndDate" class="form-label"></label>
+                        <input asp-for="EndDate" class="form-control" type="date" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 3: BOTONES DE ACCIÓN -->
+        <div class="d-flex justify-content-end gap-2 mt-4">
+            <a asp-action="Index" class="btn btn-light">Cancelar</a>
+            <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
