@@ -6,36 +6,36 @@
 
 <header class="page-header">
     <div>
-        <h1 class="page-title">Crear Proyecto</h1>
-        <p class="page-subtitle">Rellena la información para registrar un nuevo proyecto en el sistema.</p>
+        <h1 class="page-title">Crear proyecto</h1>
+        <p class="page-subtitle">Rellene la info para registrar/crear un nuevo proyecto</p>
     </div>
 </header>
 
 <form asp-action="Create">
     <div class="form-card">
-        <!-- SECCIÓN 1: INFORMACIÓN GENERAL -->
+
         <div class="row form-section">
             <div class="col-md-4">
                 <div class="form-section-header">
-                    <h2>Información General</h2>
-                    <p>Datos básicos para identificar y clasificar el proyecto.</p>
+                    <h2>Información</h2>
+                    <p> Añada datos básicos para el proyecto</p>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="row g-3">
                     <div class="col-sm-8">
-                        <label asp-for="Name" class="form-label"></label>
+                        <label asp-for="Name" class="form-label">Nombre de proyecto</label>
                         <input asp-for="Name" class="form-control" />
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                     <div class="col-sm-4">
                         <label asp-for="Status" class="form-label"></label>
                         <select asp-for="Status" class="form-select">
-                            <option value="">Seleccionar...</option>
+                            <option value="">...</option>
                             <option>Planificado</option>
-                            <option>En Curso</option>
+                            <option>En curso</option>
                             <option>Completado</option>
-                            <option>En Espera</option>
+                            <option>En espera</option>
                             <option>Cancelado</option>
                         </select>
                         <span asp-validation-for="Status" class="text-danger"></span>
@@ -49,23 +49,22 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 2: PLAZOS -->
         <div class="row form-section">
             <div class="col-md-4">
                 <div class="form-section-header">
-                    <h2>Plazos y Fechas</h2>
-                    <p>Fechas clave para el seguimiento del proyecto.</p>
+                    <h2>Plazos y fechas</h2>
+                    <p>Fechas de los plazos del proyecto</p>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="row g-3">
                     <div class="col-sm-6">
-                        <label asp-for="StartDate" class="form-label"></label>
+                        <label asp-for="StartDate" class="form-label"> Fecha de inicio</label>
                         <input asp-for="StartDate" class="form-control" type="date" />
                         <span asp-validation-for="StartDate" class="text-danger"></span>
                     </div>
                     <div class="col-sm-6">
-                        <label asp-for="EndDate" class="form-label"></label>
+                        <label asp-for="EndDate" class="form-label">Fecha de término</label>
                         <input asp-for="EndDate" class="form-control" type="date" />
                         <span asp-validation-for="EndDate" class="text-danger"></span>
                     </div>
@@ -73,10 +72,9 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 3: BOTONES DE ACCIÓN -->
         <div class="d-flex justify-content-end gap-2 mt-4">
             <a asp-action="Index" class="btn btn-light">Cancelar</a>
-            <input type="submit" value="Guardar Proyecto" class="btn btn-primary" />
+            <input type="submit" value="Guardar" class="btn btn-primary" />
         </div>
     </div>
 </form>
